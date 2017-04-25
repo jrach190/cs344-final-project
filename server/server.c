@@ -6,10 +6,10 @@
  *
  *
  * server.c
- * This file created to //TODO fill me in with file purpose
+ * This file created to accept incoming connections, launch a new thread to handle the connection, and wait for more
+ * connections
  *
- * Code for this file adapted from provided TCPEchoServer-Thread.c file to accept incoming connections and create a
- * unique thread to handle each one
+ * Code for this file adapted from TCPEchoServer-Thread.c file provided by David Bethelmy for CS344 use.
  **********************************************************************************************************************/
 
 #include "TCPServer.h"
@@ -69,6 +69,4 @@ void *ThreadMain(void *threadArgs)
     HandleTCPClient(clientSocket);
 
     return (NULL);
-
-
 }

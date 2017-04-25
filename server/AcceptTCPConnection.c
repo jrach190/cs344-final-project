@@ -6,7 +6,7 @@
  * 
  * 
  * AcceptTCPConnection.c
- * This file created to //TODO fill me in with file purpose
+ * This file created to accept a TCP connection at the passed server socket and return the value of the client socket
  * 
  * This file is adapted from the provided AcceptTCPConnection.c file
  * 

@@ -6,10 +6,9 @@
  * 
  * 
  * TCPServer.h
- * This file created to //TODO fill me in with file purpose
+ * This file created to provides the prototyping for a number of functions used by the server.c file.
  * 
  * This header file adapted from provided TCPEchoServer.h file in the provided TCPEchoServer-Fork_And_Threads folder.
- * This header file provides the prototyping for a number of functions used by the server.c file.
  **********************************************************************************************************************/
 #include <stdio.h>      /* for printf() and fprintf() */
 #include <sys/socket.h> /* for socket(), bind(), and connect() */
