@@ -9,7 +9,7 @@
  * This file created to accept incoming connections, launch a new thread to handle the connection, and wait for more
  * connections
  *
- * Code for this file adapted from TCPEchoServer-Thread.c file provided by David Bethelmy for CS344 use.
+ * Code for this file adapted from TCPEchoServer-Thread.c file provided by David Bethelmy for CS344 use
  **********************************************************************************************************************/
 
 #include "TCPServer.h"
