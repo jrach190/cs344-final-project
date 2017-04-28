@@ -7,9 +7,9 @@
  * 
  * CreateTCPServerSocket.c
  * This file created to //TODO fill me in with file purpose
- * 
+ *
+ *
  * This file adapted from provided CreateTCPServerSocket.c file
- * 
  **********************************************************************************************************************/
 #include <sys/socket.h> /* for socket(), bind(), and connect() */
 #include <arpa/inet.h>  /* for sockaddr_in and inet_ntoa() */

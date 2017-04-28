@@ -7,9 +7,9 @@
  * 
  * AcceptTCPConnection.c
  * This file created to accept a TCP connection at the passed server socket and return the value of the client socket
- * 
+ *
+ *
  * This file is adapted from the provided AcceptTCPConnection.c file
- * 
  **********************************************************************************************************************/
 #include <stdio.h>      /* for printf() */
 #include <sys/socket.h> /* for accept() */

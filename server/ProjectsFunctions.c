@@ -13,17 +13,18 @@
 
 #include "ProjectsFunctions.h"
 
-int main(int argc, char *argv[])
-{
-    NodeType * head = 0;
-    ProjectList projectList;
-
-    projectList.head = head;
-    projectList.count = 0;
-
-    readProjectsFromFile(&projectList, "rachj@my.erau.edu", strlen("rachj@my.erau.edu"));
-    traverseProjects(projectList.head);
-}
+//Main for testing the projects functions, not required for use of full program
+//int main(int argc, char *argv[])
+//{
+//    NodeType * head = 0;
+//    ProjectList projectList;
+//
+//    projectList.head = head;
+//    projectList.count = 0;
+//
+//    readProjectsFromFile(&projectList, "rachj@my.erau.edu", strlen("rachj@my.erau.edu"));
+//    traverseProjects(projectList.head);
+//}
 
 void traverseProjects(NodeType * head)
 {

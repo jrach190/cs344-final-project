@@ -10,6 +10,7 @@
  * The sendSignUp function sends a sign up menu to the client and verifies to ensure the new user does not already exist
  * The sendLogIn function sends a log in menu to the client and ensures the connecting client is authorized
  *
+ *
  * This file is adapted from the provided HandleTCPClient.c file in order to handle the specific behavior relevant to
  * this specific project.
  **********************************************************************************************************************/
