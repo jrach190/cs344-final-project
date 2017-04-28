@@ -44,7 +44,7 @@ void traverseProjects(NodeType * head)
         printf("Project description: %s\n", dataPointer -> Description);
         printf("Project creation date: %s\n",dataPointer->DateCreated);
         printf("Project due date: %s\n", dataPointer->DueDate);
-        printf("Project members:\t");
+        printf("%d Project members:\t",dataPointer->MembersOnProject);
         traverseMembers(dataPointer->personListHead);
         head = head -> next;
     }
@@ -170,8 +170,8 @@ int readProjectsFromFile(ProjectList *projectList, char *userName, size_t length
     {
         newProjectInfo = (ProjectInfo *) malloc(sizeof(ProjectInfo));
 
-        fgets(newProjectInfo->ProjectName, 101, fp);
-        fgets(newProjectInfo -> Description,1001,fp);
+        fgets(newProjectInfo->ProjectName, 101, fp); //size of project name
+        fgets(newProjectInfo -> Description, 1001,fp); //size of description of project
         fscanf(fp,"%s", newProjectInfo->DateCreated);
         fscanf(fp,"%s", newProjectInfo->DueDate);
 
@@ -184,14 +184,15 @@ int readProjectsFromFile(ProjectList *projectList, char *userName, size_t length
         while (!stopFlag)
         {
             newPersonInfo = (PersonInfo *) malloc(sizeof(PersonInfo));
-            fscanf(fp, "%s", newPersonInfo->PersonName);
-            if (strcmp(newPersonInfo->PersonName, "0\0\n") == 0) {
+            fgets(newPersonInfo->PersonName, 51,fp); //size of name of person on project
+            if (newPersonInfo->PersonName[0] == '0')
+            {
+                newProjectInfo->MembersOnProject--; //decrement count to accurately reflect number of members in project
                 stopFlag = 1;
                 break;
             }
             appendMembers(newProjectInfo, newPersonInfo);
         }
-        fgetc(fp); //clear fget buffer before next action
         appendProjects(projectList,newProjectInfo);
     }
     fclose(fp);
