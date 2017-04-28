@@ -13,24 +13,14 @@
  * Unix class
  **********************************************************************************************************************/
 
-#include <stdio.h>      /* for printf() and fprintf() */
-#include <sys/socket.h> /* for socket(), connect(), send(), and recv() */
-#include <arpa/inet.h>  /* for sockaddr_in and inet_addr() */
-#include <stdlib.h>     /* for atoi() and exit() */
-#include <string.h>     /* for memset() */
-#include <unistd.h>     /* for close() */
-
 #include "TCPClient.h"
-
 
 #define RCVBUFSIZE 100   /* Size of receive buffer */
 #define NAME_SIZE 21 /*Includes room for null */
 
-typedef char BYTE;
-
 void communicateWithServer(int);
 
-int main(int argc, char * argv)
+int main(int argc, char * argv[])
 {
     int socket;
     struct sockaddr_in serverAddress;
@@ -54,3 +44,4 @@ int main(int argc, char * argv)
     close(socket);
     return 0;
 }
+
