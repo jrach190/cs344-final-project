@@ -29,7 +29,7 @@ int main(int argc, char * argv[])
     pthread_t threadID;
     struct ThreadArgs *threadArgs;
 
-    if (argc != 2)
+    if (argc != 2) //Test for correct number of arguments
     {
         fprintf(stderr,"Usage:  %s <SERVER PORT>\n", argv[0]);
         exit(1);
