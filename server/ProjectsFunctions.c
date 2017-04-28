@@ -11,47 +11,7 @@
  * This file adapted from previously submitted homeworks and linked list files provided by David Bethelmy for the course
  **********************************************************************************************************************/
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-typedef char BYTE;
-
-typedef struct personinfo {
-    char PersonName[51]; //Name of person on project, max 50 characters, plus space for '\0'
-}PersonInfo;
-
-typedef struct personnode {
-    PersonInfo * personInfoPtr;
-    struct personnode * next;
-}PersonNode;
-
-typedef struct projectnode {
-    char ProjectName[101]; //Project name, max 100 characters, plus space for '\0'
-    char Description[1001]; //Project description, max 1000 characters, plus space for '\0'
-    char DateCreated[9]; //Project creation date, max 8 characters, plus space for '\0'
-    char DueDate[9]; //Project due date, max 8 characters, plus space for '\0'
-    BYTE MembersOnProject; //byte containing number of members on a project
-    PersonNode * personListHead; //Head of linked list of all persons on a project
-}ProjectInfo;
-
-typedef struct node
-{
-    ProjectInfo * projectInfoPtr;
-    struct node * next;
-}NodeType;
-
-typedef struct ProjectList {
-    NodeType * head;
-    unsigned int count;
-}ProjectList;
-
-void traverseProjects(NodeType *);
-void appendProjects(ProjectList *, ProjectInfo *);
-int readProjectsFromFile(ProjectList *);
-
-void traverseMembers(PersonNode *);
-void appendMembers(ProjectInfo *, PersonInfo *);
+#include "ProjectsFunctions.h"
 
 int main(int argc, char *argv[])
 {
@@ -61,7 +21,7 @@ int main(int argc, char *argv[])
     projectList.head = head;
     projectList.count = 0;
 
-    readProjectsFromFile(&projectList);
+    readProjectsFromFile(&projectList, "rachj@my.erau.edu", strlen("rachj@my.erau.edu"));
     traverseProjects(projectList.head);
 }
 
@@ -180,10 +140,18 @@ void appendMembers(ProjectInfo * projectInfo, PersonInfo * newPersonInfo)
     projectInfo ->MembersOnProject++;
 }
 
-int readProjectsFromFile(ProjectList *projectList)
+int readProjectsFromFile(ProjectList *projectList, char *userName, size_t lengthOfUserName)
 {
+    lengthOfUserName+=1; //Account for the '\0' character in further operators
+    char fileExtension[36];
+    strncpy(fileExtension, userName, lengthOfUserName);
+    puts(fileExtension);
+    strcat(fileExtension,".proj");
+    puts(fileExtension);
+
     FILE * fp;
-    fp = fopen("projects.txt", "r");
+    fp = fopen(fileExtension, "r");
+
 
     int stopFlag = 0;
 
