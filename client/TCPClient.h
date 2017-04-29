@@ -19,12 +19,6 @@
 #include <string.h>     /* for memset() */
 #include <unistd.h>     /* for close() */
 
-struct menu {
-    char line1[20];
-    char line2[20];
-    char line3[20];
-}Menu;
-
 void DieWithError(char *errorMessage);  /* Error handling function */
 int CreateTCPClientSocket(struct sockaddr_in *, char *, unsigned short); /*Create TCP client socket*/
 void communicateWithServer(int); /*Handle server connection*/

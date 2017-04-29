@@ -12,7 +12,8 @@
  * This code provided by David Bethelmy in the serverWithMenu folder for use in CS344 C Programming and Unix course.
  **********************************************************************************************************************/
 #include <sys/socket.h> /* for recv() and send() */
-void DieWithError(char *errorMessage);  /* Error handling function */
+
+#include "TCPServer.h"
 
 void get(int sock, void * buffer, unsigned int size)
 {

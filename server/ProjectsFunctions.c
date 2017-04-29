@@ -49,7 +49,33 @@ void traverseProjects(NodeType * head)
         head = head -> next;
     }
     printf("\n\n------------------------------------------------------------------------\n\n");
+}
 
+NodeType * findProjectByUserName(ProjectList * linkedList, char * projectToFind)
+{
+    NodeType * head = linkedList->head;
+    NodeType * nullNode = 0;
+    ProjectInfo * dataPointer;
+
+    if (head == 0)
+    {
+        return nullNode; //linked list empty, nothing to find
+    }
+
+    dataPointer = (ProjectInfo *) malloc(sizeof(ProjectInfo));
+
+    while (head != 0)
+    {
+        dataPointer = head->projectInfoPtr;
+
+        if (!strcmp(dataPointer->ProjectName,projectToFind))
+        {
+            return head;
+        }
+        head = head -> next;
+    }
+    printf("Client searched for %s but %s was not found.\n", projectToFind, projectToFind);
+    return  nullNode; //Node not found
 }
 
 void appendProjects(ProjectList *linkedList, ProjectInfo *newDataPointer)

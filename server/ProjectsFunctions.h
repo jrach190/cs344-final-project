@@ -15,6 +15,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "LoginItems.h"
 
 typedef char BYTE;
 
@@ -53,3 +54,9 @@ int readProjectsFromFile(ProjectList *, char *userName, size_t lengthOfUserName)
 
 void traverseMembers(PersonNode *);
 void appendMembers(ProjectInfo *, PersonInfo *);
+
+void createNewProject(int);
+void editProject(int);
+void deleteProject(int);
+void saveProject(int);
+void displayProject(int);
